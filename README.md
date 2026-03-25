@@ -7,7 +7,7 @@ Aqui é onde eu cultivo minhas ideias e transformo em projetos de **design e des
 
 ## 🌸 Sobre o Repositório
 
-Este repositório foi criado para reunir todos os meus projetos, desde os mais simples até os mais elaborados. 💻✨
+Este repositório foi criado para reunir todos os meus projetos, desde os mais simples até os mais elaborados durante minha jornada na Faculdade de Engenaria de Computação💻
 
 ---
 
