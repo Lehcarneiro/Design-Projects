@@ -1,7 +1,7 @@
 # 🌹✨ Projetos Web-Design 💻🌹
 
 Bem-vindo(a) ao meu cantinho de criação! 💖
-Aqui é onde eu transformo ideias em projetos de **design e desenvolvimento web** usando **HTML, CSS e JavaScript** além de protótipos feitos no Figma 🎨
+Aqui é onde eu transformo ideias em projetos de **design e desenvolvimento web** usando **HTML, CSS e JavaScript** além de alguns protótipos e rascunos feitos no Figma 🎨
 
 ---
 
