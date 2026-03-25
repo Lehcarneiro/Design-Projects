@@ -1,0 +1,95 @@
+/* RESET BÁSICO */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* FUNDO GERAL */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #ffffff 0%, #ffffff 30%, #ffe6f0 100%);
+  min-height: 100vh;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  width: 100%;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* NAV */
+.nav {
+  position: absolute;
+  top: 20px;
+  display: flex;
+  gap: 25px;
+  z-index: 10;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #ff6fae;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.nav a:hover {
+  background: #ffb6d5;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255, 182, 213, 0.7);
+}
+
+/* WRAPPER DO TÍTULO */
+.title-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+/* IMAGEM DO TÍTULO */
+.title-img {
+  position: relative;
+  top: -50px;
+  width: 280px;
+  max-width: 90%;
+  z-index: 2;
+  filter: drop-shadow(0 10px 25px rgba(195, 138, 198, 0.35));
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 10px 25px rgba(255, 36, 179, 0.35));
+
+}
+
+.butterfly {
+  position: absolute;
+  width: 150px;
+  opacity: 0.9;
+  filter: drop-shadow(0 8px 18px rgba(255, 140, 190, 0.4));
+}
+
+.butterfly.left {
+  left: -120px;
+  top: -50px;
+}
+
+.butterfly.right {
+  right: -120px;
+  top: -50px;
+}
+
