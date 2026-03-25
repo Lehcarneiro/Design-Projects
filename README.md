@@ -43,7 +43,7 @@ A ideia é acompanhar minha jornada e ver minha evolução ao longo do tempo.
 
 ## 🌸 Em constante crescimento...
 
-Novos projetos serão adicionados sempre que eu aprender algo novo ou quiser testar ideias diferentes 💡🌹
+Novos projetos serão adicionados sempre que eu aprender algo novo ou quiser testar ideias diferentes. Sinta-se à vontade para dar ideias, discutir opniões, mandar críticas construitivas ou só apreciar os designs.💡🌹
 
 ---
 
