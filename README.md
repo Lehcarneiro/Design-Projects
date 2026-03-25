@@ -7,15 +7,7 @@ Aqui é onde eu cultivo minhas ideias e transformo em projetos de **design e des
 
 ## 🌸 Sobre o Repositório
 
-Este repositório foi criado para reunir todos os meus projetos, desde os mais simples até os mais elaborados.
-Cada projeto representa um passo na minha evolução como desenvolvedora 💻✨
-
-🌷 O que você vai encontrar aqui:
-
-* Layouts criativos e responsivos
-* Interfaces feitas com carinho 💕
-* Experimentos com animações e interações
-* Protótipos e designs no Figma
+Este repositório foi criado para reunir todos os meus projetos, desde os mais simples até os mais elaborados. 💻✨
 
 ---
 
