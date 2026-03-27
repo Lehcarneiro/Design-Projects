@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap");
+
 /* RESET BÁSICO */
 * {
   margin: 0;
@@ -7,7 +9,7 @@
 
 /* FUNDO GERAL */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   background: linear-gradient(180deg, #ffffff 30%, #ff84be 80%, #ff4da0 100%);
   min-height: 100vh;
   position: relative;
@@ -204,14 +206,111 @@ body > * {
   height: 100%;
 }
 
+.author-main {
+  width: min(96vw, 1120px);
+  margin: 24px auto 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4vw, 44px);
+}
+
 .author-photo-container {
   display: flex;
   justify-content: center;
-  margin-top: 24px;
 }
 
 .author-photo {
-  width: clamp(160px, 22vw, 240px);
+  width: min(100%, 420px);
   height: auto;
   display: block;
+  filter: drop-shadow(0 10px 24px rgba(255, 102, 170, 0.28));
 }
+
+.author-note {
+  width: clamp(420px, 52vw, 640px);
+  max-width: 94vw;
+  flex-shrink: 0;
+  min-height: 300px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 24px;
+  padding: 26px 28px;
+  box-shadow: 0 16px 34px rgba(245, 98, 161, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ff4f93;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(18px, 1.5vw, 24px);
+  line-height: 1.45;
+  text-align: center;
+  animation: float-card 3.8s ease-in-out infinite;
+}
+
+.author-note p {
+  margin: 0;
+}
+
+.contact-main {
+  width: min(96vw, 1180px);
+  margin: 28px auto 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-note {
+  width: clamp(620px, 72vw, 980px);
+  max-width: 96vw;
+  min-height: 230px;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 28px;
+  padding: 32px 40px;
+  box-shadow: 0 16px 34px rgba(245, 98, 161, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #ff4f93;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: clamp(22px, 2.1vw, 34px);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.contact-note p {
+  margin: 0;
+}
+
+@keyframes float-card {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 960px) {
+  .author-main {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .author-photo {
+    width: min(84vw, 360px);
+  }
+
+  .author-note {
+    width: min(96vw, 560px);
+    min-height: 250px;
+    font-size: clamp(17px, 4.4vw, 22px);
+  }
+
+  .contact-note {
+    width: min(96vw, 720px);
+    min-height: 190px;
+    padding: 24px 24px;
+    font-size: clamp(18px, 5.2vw, 28px);
+  }
+}
+
