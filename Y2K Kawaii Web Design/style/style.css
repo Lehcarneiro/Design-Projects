@@ -10,6 +10,33 @@ body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(180deg, #ffffff 30%, #ff84be 80%, #ff4da0 100%);
   min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: repeat;
+  mix-blend-mode: difference;
+}
+
+body::before {
+  background-image: url("../img/stars1.png");
+  background-size: 560px auto;
+  background-position: 0 0;
+  opacity: 0.17;
+}
+
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 /* HERO */
@@ -177,3 +204,14 @@ body {
   height: 100%;
 }
 
+.author-photo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.author-photo {
+  width: clamp(160px, 22vw, 240px);
+  height: auto;
+  display: block;
+}
