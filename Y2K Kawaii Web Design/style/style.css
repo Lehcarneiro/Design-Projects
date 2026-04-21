@@ -225,6 +225,7 @@ body > * {
   height: auto;
   display: block;
   filter: drop-shadow(0 10px 24px rgba(255, 102, 170, 0.28));
+  animation: float-card 3.8s ease-in-out infinite;
 }
 
 .author-note {
