@@ -101,6 +101,7 @@ body > * {
   align-items: center;
   justify-content: center;
   margin-top: 60px;
+  pointer-events: none;
 }
 
 /* IMAGEM DO TÍTULO */
@@ -159,6 +160,8 @@ body > * {
 
 /* BARRA DE PESQUISA */
 .search-bar {
+  position: relative;
+  z-index: 25;
   display: flex;
   align-items: center;
   width: 90%;
@@ -172,6 +175,7 @@ body > * {
 }
 
 .search-input {
+  pointer-events: auto;
   flex: 1;
   border: none;
   background: transparent;
@@ -254,6 +258,14 @@ body > * {
   font-family: "Josefin Sans", sans-serif;
   font-size: clamp(22px, 2.4vw, 34px);
   line-height: 1.1;
+}
+
+.projects-empty {
+  display: none;
+  margin-top: 18px;
+  text-align: center;
+  color: #f1096f;
+  font-size: clamp(18px, 1.8vw, 24px);
 }
 
 .author-main {
