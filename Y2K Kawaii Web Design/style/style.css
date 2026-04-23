@@ -260,6 +260,13 @@ body > * {
   line-height: 1.1;
 }
 
+.project-page-title {
+  width: min(96vw, 1120px);
+  margin: 12px auto 0;
+  text-align: center;
+  color: #ff4f93;
+}
+
 .projects-empty {
   display: none;
   margin-top: 18px;
