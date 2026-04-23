@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/style.css">
-    <title>Document</title>
+  <link rel="icon" href="img/left-butterfly.png?v=3" type="image/png">
+  <link rel="shortcut icon" href="img/left-butterfly.png?v=3" type="image/png">
+  <title>Leticia Portifólio</title>
 </head>
 <body>
     
@@ -49,8 +51,8 @@
   </div>
 
   <div class="search-bar">
-    <input type="text" placeholder="Pesquisar" class="search-input">
-    <button class="search-btn">
+    <input type="text" placeholder="Pesquisar projetos" class="search-input" id="projectSearchInput" aria-label="Pesquisar projetos">
+    <button class="search-btn" id="projectSearchBtn" type="button" aria-label="Buscar projetos">
       <img src="img/search2.png" alt="Pesquisar">
     </button>
   </div>
@@ -59,5 +61,97 @@
 
 
 </header>
+
+<main>
+  <section class="projects-main" aria-label="Galeria de projetos">
+    <div class="projects-grid" id="projectsGrid">
+      <a href="projeto1.html" class="project-card" data-title="Projeto 1">
+        <span class="project-title">Projeto 1</span>
+      </a>
+
+      <a href="#" class="project-card" data-title="Projeto 2">
+        <span class="project-title">Projeto 2</span>
+      </a>
+
+      <a href="#" class="project-card" data-title="Projeto 3">
+        <span class="project-title">Projeto 3</span>sss
+      </a>
+
+      <a href="#" class="project-card" data-title="Projeto 4">
+        <span class="project-title">Projeto 4</span>
+      </a>
+
+      <a href="#" class="project-card" data-title="Projeto 5">
+        <span class="project-title">Projeto 5</span>
+      </a>
+
+      <a href="#" class="project-card" data-title="Projeto 6">
+        <span class="project-title">Projeto 6</span>
+      </a>
+    </div>
+    <p class="projects-empty" id="projectsEmpty" hidden>Nenhum projeto encontrado.</p>
+  </section>
+</main>
+
+<script>
+  (function () {
+    function normalizeText(text) {
+      var value = (text || "").toLowerCase();
+
+      if (value.normalize) {
+        value = value.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      return value;
+    }
+
+    function initProjectSearch() {
+      var searchInput = document.getElementById("projectSearchInput");
+      var searchBtn = document.getElementById("projectSearchBtn");
+      var projectCards = document.querySelectorAll(".project-card");
+      var emptyState = document.getElementById("projectsEmpty");
+
+      if (!searchInput || !searchBtn || !projectCards.length || !emptyState) {
+        return;
+      }
+
+      function filterProjects() {
+        var query = normalizeText(searchInput.value.replace(/^\s+|\s+$/g, ""));
+        var visibleCount = 0;
+        var i;
+
+        for (i = 0; i < projectCards.length; i += 1) {
+          var card = projectCards[i];
+          var cardTitle = card.getAttribute("data-title") || card.textContent || "";
+          var isMatch = normalizeText(cardTitle).indexOf(query) !== -1;
+
+          card.style.display = isMatch ? "flex" : "none";
+
+          if (isMatch) {
+            visibleCount += 1;
+          }
+        }
+
+        emptyState.style.display = visibleCount === 0 ? "block" : "none";
+      }
+
+      searchInput.addEventListener("input", filterProjects);
+      searchInput.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+          filterProjects();
+        }
+      });
+      searchBtn.addEventListener("click", filterProjects);
+
+      filterProjects();
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initProjectSearch);
+    } else {
+      initProjectSearch();
+    }
+  })();
+</script>
 </body>
 </html>
