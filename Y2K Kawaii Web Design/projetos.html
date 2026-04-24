@@ -52,6 +52,12 @@
 
   <div class="search-bar">
     <input type="text" placeholder="Pesquisar projetos" class="search-input" id="projectSearchInput" aria-label="Pesquisar projetos">
+    <select class="search-type" id="projectTypeFilter" aria-label="Filtrar por tipo de projeto">
+      <option value="all">Todos os tipos</option>
+      <option value="design">Design</option>
+      <option value="web">Desenvolvimento web</option>
+      <option value="jogo">Desenvolvimento de jogo</option>
+    </select>
     <button class="search-btn" id="projectSearchBtn" type="button" aria-label="Buscar projetos">
       <img src="img/search2.png" alt="Pesquisar">
     </button>
@@ -64,31 +70,40 @@
 
 <main>
   <section class="projects-main" aria-label="Galeria de projetos">
-    <div class="projects-grid" id="projectsGrid">
-      <a href="projeto1.html" class="project-card" data-title="Projeto 1">
-        <span class="project-title">Projeto 1</span>
-      </a>
+    <div class="project-section" data-section="design">
+      <h2 class="project-section-title">Projetos de Design</h2>
+      <div class="projects-grid">
+        <a href="projeto1.html" class="project-card" data-title="Identidade Visual EJ Turing" data-type="design">
+          <span class="project-title">Identidade Visual EJ Turing</span>
+        </a>
 
-      <a href="#" class="project-card" data-title="Projeto 2">
-        <span class="project-title">Projeto 2</span>
-      </a>
+        <a href="#" class="project-card" data-title="Identidade Visual Sandra's Brecho" data-type="design">
+          <span class="project-title">Identidade Visual Sandra's Brecho</span>
+        </a>
 
-      <a href="#" class="project-card" data-title="Projeto 3">
-        <span class="project-title">Projeto 3</span>sss
-      </a>
-
-      <a href="#" class="project-card" data-title="Projeto 4">
-        <span class="project-title">Projeto 4</span>
-      </a>
-
-      <a href="#" class="project-card" data-title="Projeto 5">
-        <span class="project-title">Projeto 5</span>
-      </a>
-
-      <a href="#" class="project-card" data-title="Projeto 6">
-        <span class="project-title">Projeto 6</span>
-      </a>
+        <a href="#" class="project-card" data-title="Identidade Visual A Mari e a Lele Pintura Facial" data-type="design">
+          <span class="project-title">Identidade Visual A Mari e a Lele Pintura Facial</span>
+        </a>
+      </div>
     </div>
+
+    <div class="project-section" data-section="dev">
+      <h2 class="project-section-title">Projetos de Desenvolvimento</h2>
+      <div class="projects-grid">
+        <a href="#" class="project-card" data-title="Linha do Tempo Descobertas do Universo" data-type="web">
+          <span class="project-title">Linha do Tempo Descobertas do Universo</span>
+        </a>
+
+        <a href="#" class="project-card" data-title="Projeto 5" data-type="jogo">
+          <span class="project-title">Projeto 5</span>
+        </a>
+
+        <a href="#" class="project-card" data-title="Projeto 6" data-type="web">
+          <span class="project-title">Projeto 6</span>
+        </a>
+      </div>
+    </div>
+
     <p class="projects-empty" id="projectsEmpty" hidden>Nenhum projeto encontrado.</p>
   </section>
 </main>
@@ -107,35 +122,61 @@
 
     function initProjectSearch() {
       var searchInput = document.getElementById("projectSearchInput");
+      var typeFilter = document.getElementById("projectTypeFilter");
       var searchBtn = document.getElementById("projectSearchBtn");
       var projectCards = document.querySelectorAll(".project-card");
+      var projectSections = document.querySelectorAll(".project-section");
       var emptyState = document.getElementById("projectsEmpty");
 
-      if (!searchInput || !searchBtn || !projectCards.length || !emptyState) {
+      if (!searchInput || !typeFilter || !searchBtn || !projectCards.length || !emptyState) {
         return;
       }
 
       function filterProjects() {
         var query = normalizeText(searchInput.value.replace(/^\s+|\s+$/g, ""));
+        var selectedType = typeFilter.value || "all";
         var visibleCount = 0;
+        var sectionVisibleMap = {};
         var i;
+
+        for (i = 0; i < projectSections.length; i += 1) {
+          var sectionKey = projectSections[i].getAttribute("data-section") || String(i);
+          sectionVisibleMap[sectionKey] = 0;
+        }
 
         for (i = 0; i < projectCards.length; i += 1) {
           var card = projectCards[i];
           var cardTitle = card.getAttribute("data-title") || card.textContent || "";
-          var isMatch = normalizeText(cardTitle).indexOf(query) !== -1;
+          var cardType = card.getAttribute("data-type") || "";
+          var titleMatch = normalizeText(cardTitle).indexOf(query) !== -1;
+          var typeMatch = selectedType === "all" || cardType === selectedType;
+          var isMatch = titleMatch && typeMatch;
 
           card.style.display = isMatch ? "flex" : "none";
 
           if (isMatch) {
             visibleCount += 1;
+
+            var parentSection = card.closest(".project-section");
+            var parentSectionKey = parentSection ? parentSection.getAttribute("data-section") || "" : "";
+
+            if (parentSectionKey) {
+              sectionVisibleMap[parentSectionKey] += 1;
+            }
           }
+        }
+
+        for (i = 0; i < projectSections.length; i += 1) {
+          var section = projectSections[i];
+          var sectionKey = section.getAttribute("data-section") || String(i);
+          section.style.display = sectionVisibleMap[sectionKey] > 0 ? "block" : "none";
         }
 
         emptyState.style.display = visibleCount === 0 ? "block" : "none";
       }
 
       searchInput.addEventListener("input", filterProjects);
+      typeFilter.addEventListener("change", filterProjects);
       searchInput.addEventListener("keyup", function (event) {
         if (event.key === "Enter") {
           filterProjects();
