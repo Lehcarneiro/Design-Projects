@@ -50,17 +50,23 @@
     <img src="img/right-butterfly.png" class="butterfly right" alt="">
   </div>
 
-  <div class="search-bar">
-    <input type="text" placeholder="Pesquisar projetos" class="search-input" id="projectSearchInput" aria-label="Pesquisar projetos">
-    <select class="search-type" id="projectTypeFilter" aria-label="Filtrar por tipo de projeto">
-      <option value="all">Todos os tipos</option>
-      <option value="design">Design</option>
-      <option value="web">Desenvolvimento web</option>
-      <option value="jogo">Desenvolvimento de jogo</option>
-    </select>
-    <button class="search-btn" id="projectSearchBtn" type="button" aria-label="Buscar projetos">
-      <img src="img/search2.png" alt="Pesquisar">
-    </button>
+  <div class="search-controls">
+    <div class="search-bar">
+      <input type="text" placeholder="Pesquisar projetos" class="search-input" id="projectSearchInput" aria-label="Pesquisar projetos">
+      <button class="search-btn" id="projectSearchBtn" type="button" aria-label="Buscar projetos">
+        <img src="img/search2.png" alt="Pesquisar">
+      </button>
+    </div>
+
+    <div class="project-filter-row">
+      <label class="project-filter-label" for="projectTypeFilter">Filtrar:</label>
+      <select class="search-type project-type-outside" id="projectTypeFilter" aria-label="Filtrar por tipo de projeto">
+        <option value="all">Todos os tipos</option>
+        <option value="design">Design</option>
+        <option value="web">Desenvolvimento web</option>
+        <option value="jogo">Desenvolvimento de jogo</option>
+      </select>
+    </div>
   </div>
 
 
@@ -77,13 +83,18 @@
           <span class="project-title">Identidade Visual EJ Turing</span>
         </a>
 
-        <a href="#" class="project-card" data-title="Identidade Visual Sandra's Brecho" data-type="design">
+        <a href="projeto2.html" class="project-card" data-title="Identidade Visual Sandra's Brecho" data-type="design">
           <span class="project-title">Identidade Visual Sandra's Brecho</span>
         </a>
 
-        <a href="#" class="project-card" data-title="Identidade Visual A Mari e a Lele Pintura Facial" data-type="design">
+        <a href="projeto3.html" class="project-card" data-title="Identidade Visual A Mari e a Lele Pintura Facial" data-type="design">
           <span class="project-title">Identidade Visual A Mari e a Lele Pintura Facial</span>
         </a>
+
+        <a href="projeto3.html" class="project-card" data-title="Identidade Visual A Mari e a Lele Pintura Facial" data-type="design">
+          <span class="project-title">Identidade Visual A Mari e a Lele Pintura Facial</span>
+        </a>
+
       </div>
     </div>
 
@@ -194,5 +205,24 @@
     }
   })();
 </script>
+
+<footer class="site-footer" aria-label="Rodape do site">
+  <div class="footer-inner">
+    <p class="footer-name">Leticia Maria Batista Carneiro</p>
+    <p class="footer-contact">
+      <a href="mailto:letici4.carneiro@gmail.com">letici4.carneiro@gmail.com</a>
+      <span aria-hidden="true">|</span>
+      <a href="https://wa.me/5535997355402">+55 35 9 9735-5402</a>
+    </p>
+    <nav class="footer-links" aria-label="Links rapidos do rodape">
+      <a href="index.html">Inicio</a>
+      <a href="autora.html">Sobre</a>
+      <a href="projetos.html">Projetos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <p class="footer-copy">Portfolio pessoal - Todos os direitos reservados.</p>
+  </div>
+</footer>
+
 </body>
 </html>
