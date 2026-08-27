@@ -112,16 +112,24 @@
     <div class="bg-blob-bl"></div>
   </div>
 
-    <header class="inner-page-header">
-      <a href="index.html" class="btn-back">
-        <span>←</span> Início
+  <div class="page-container">
+    <header class="header-top inner-header">
+      <a href="index.html" class="btn-arrow-corner" aria-label="Voltar para o Início" title="Voltar para o Início">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
       </a>
-      <nav class="header-nav-links" style="display: flex; gap: 0.8rem;">
-        <a href="autora.html" class="header-nav-btn active" style="padding: 0.55rem 1.1rem; border-radius: 999px; background: var(--grad-badge); color: var(--color-primary-pink); font-family: var(--font-display); font-size: 0.78rem; font-weight: 700;">Sobre Mim</a>
-        <a href="skills.html" class="header-nav-btn" style="padding: 0.55rem 1.1rem; border-radius: 999px; background: rgba(255,255,255,0.7); border: 1px solid rgba(24,24,27,0.15); font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; color: #27272a;">Habilidades</a>
-        <a href="projetos.html" class="header-nav-btn" style="padding: 0.55rem 1.1rem; border-radius: 999px; background: rgba(255,255,255,0.7); border: 1px solid rgba(24,24,27,0.15); font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; color: #27272a;">Projetos</a>
+
+      <nav class="site-nav-container" aria-label="Menu principal">
+        <a href="index.html" class="nav-pill-btn">Início</a>
+        <a href="autora.html" class="nav-pill-btn active">Sobre Mim</a>
+        <a href="skills.html" class="nav-pill-btn">Habilidades</a>
+        <a href="projetos.html" class="nav-pill-btn">Projetos</a>
+        <button type="button" class="nav-pill-btn nav-btn-contact" id="navBtnContact">Contato</button>
       </nav>
-      <div class="name-subtitle" style="font-size: 1.1rem;">Portifólio Furta-Cor</div>
+
+      <div class="header-spacer" aria-hidden="true"></div>
     </header>
 
     <main>
@@ -154,5 +162,33 @@
       </a>
     </footer>
   </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="btn-modal-close" id="modalCloseBtn" aria-label="Fechar modal">&times;</button>
+      <h2 class="modal-title">Vamos Conversar! ✨</h2>
+      <p class="modal-desc">
+        Entre em contato para oportunidades de estágio e projetos em Design, Games, Web e Mobile.
+      </p>
+
+      <div class="modal-links-grid">
+        <a href="mailto:letici4.carneiro@gmail.com" class="modal-link-btn" id="emailContactLink">
+          <span>✉️</span> letici4.carneiro@gmail.com
+        </a>
+        <a href="https://github.com/Lehcarneiro" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+          <span>💻</span> github.com/Lehcarneiro
+        </a>
+        <a href="https://linkedin.com/in/letícia-maria-56668b290" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+          <span>💼</span> LinkedIn Letícia Maria
+        </a>
+        <a href="skills.html" class="modal-link-btn">
+          <span>⚡</span> Ver Habilidades
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>

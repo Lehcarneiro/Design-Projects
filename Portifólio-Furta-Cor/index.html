@@ -91,85 +91,13 @@
 
     <!-- Top Navigation Header -->
     <header class="header-top">
-      <!-- Top Left Arrow Button -->
-      <a href="autora.html" class="btn-arrow-corner" aria-label="Sobre a Autora" title="Sobre Letícia Carneiro">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
-        </svg>
-      </a>
-
-      <!-- Center Icons Group (Interactive Furta-Cor Elements) -->
-      <nav class="icons-bar" aria-label="Menu de Ícones Interativos">
-
-        <!-- 1. Heart (Sobre Mim / Valores) -->
-        <a href="autora.html" class="icon-item" data-tooltip="Sobre Mim" aria-label="Sobre Mim">
-          <svg viewBox="0 0 50 50" fill="none">
-            <path d="M25 43.5C25 43.5 6 31.5 6 18C6 11.5 11 7 17.5 7C21.5 7 24 9.5 25 11.5C26 9.5 28.5 7 32.5 7C39 7 44 11.5 44 18C44 31.5 25 43.5 25 43.5Z"
-                  fill="url(#fcHeart)"
-                  stroke="#18181b"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round" />
-          </svg>
-        </a>
-
-        <!-- 2. Globe (Web & Idiomas / Conexões) -->
-        <button type="button" class="icon-item" id="btnGlobe" data-tooltip="Conexões & Redes" aria-label="Redes e Conexões">
-          <svg viewBox="0 0 50 50" fill="none">
-            <circle cx="25" cy="25" r="19" fill="url(#fcGlobe)" stroke="#18181b" stroke-width="3" />
-            <!-- Horizontal Lines -->
-            <line x1="6" y1="25" x2="44" y2="25" stroke="#18181b" stroke-width="2.5" />
-            <path d="M8.5 17C14 19 36 19 41.5 17" stroke="#18181b" stroke-width="2" stroke-linecap="round" />
-            <path d="M8.5 33C14 31 36 31 41.5 33" stroke="#18181b" stroke-width="2" stroke-linecap="round" />
-            <!-- Vertical Meridian Ellipse -->
-            <ellipse cx="25" cy="25" rx="9.5" ry="19" stroke="#18181b" stroke-width="2.5" fill="none" />
-            <line x1="25" y1="6" x2="25" y2="44" stroke="#18181b" stroke-width="2" />
-          </svg>
-        </button>
-
-        <!-- 3. Lightning (Habilidades & Energia) -->
-        <a href="skills.html" class="icon-item" id="btnLightning" data-tooltip="Skills & Tech" aria-label="Habilidades e Tech">
-          <svg viewBox="0 0 50 50" fill="none">
-            <polygon points="27,5 11,27 24,27 21,45 39,21 26,21"
-                     fill="url(#fcLightning)"
-                     stroke="#18181b"
-                     stroke-width="3"
-                     stroke-linejoin="round"
-                     stroke-linecap="round" />
-          </svg>
-        </a>
-
-        <!-- 4. Mail (Contato Direto) -->
-        <button type="button" class="icon-item" id="btnMail" data-tooltip="Enviar Mensagem" aria-label="Contato por Email">
-          <svg viewBox="0 0 50 50" fill="none">
-            <rect x="6" y="11" width="38" height="28" rx="4" fill="url(#fcMail)" stroke="#18181b" stroke-width="3" />
-            <path d="M6 14L25 28L44 14" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </button>
-
-        <!-- 5. Eye (Projetos / Ver Portfólio) -->
-        <a href="projetos.html" class="icon-item" data-tooltip="Ver Projetos" aria-label="Ver Projetos">
-          <svg viewBox="0 0 50 50" fill="none">
-            <path d="M5 25C11 14 39 14 45 25C39 36 11 36 5 25Z" fill="url(#fcEye)" stroke="#18181b" stroke-width="3" stroke-linejoin="round" />
-            <circle cx="25" cy="25" r="7.5" stroke="#18181b" stroke-width="2.5" fill="#ffffff" />
-            <circle cx="25" cy="25" r="4" fill="#18181b" />
-          </svg>
-        </a>
-
-        <!-- 6. Asterisk / Star (Criatividade & Destaques) -->
-        <button type="button" class="icon-item" id="btnStar" data-tooltip="Magia Criativa" aria-label="Efeito Criativo">
-          <svg viewBox="0 0 50 50" fill="none">
-            <g fill="url(#fcStar)" stroke="#18181b" stroke-width="2.8" stroke-linejoin="round">
-              <path d="M25 5L28.5 18.5L42 16L32.5 25L42 34L28.5 31.5L25 45L21.5 31.5L8 34L17.5 25L8 16L21.5 18.5Z" />
-            </g>
-          </svg>
-        </button>
-
+      <nav class="site-nav-container" aria-label="Menu principal">
+        <a href="index.html" class="nav-pill-btn active">Início</a>
+        <a href="autora.html" class="nav-pill-btn">Sobre Mim</a>
+        <a href="skills.html" class="nav-pill-btn">Habilidades</a>
+        <a href="projetos.html" class="nav-pill-btn">Projetos</a>
+        <button type="button" class="nav-pill-btn nav-btn-contact" id="navBtnContact">Contato</button>
       </nav>
-
-      <!-- Right spacer for balance on desktop -->
-      <div class="header-spacer" aria-hidden="true"></div>
     </header>
 
     <!-- =======================================================================

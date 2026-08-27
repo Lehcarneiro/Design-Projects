@@ -55,11 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (btnLightning && btnLightning.tagName === 'BUTTON') {
-    btnLightning.addEventListener('click', () => {
-      openModal('Stack & Habilidades ⚡', 'Especializada em Desenvolvimento Front-end, Back-end, UI/UX Design e Desenvolvimento de Jogos.');
+  // Navigation Bar Contact Button
+  const navContactBtns = document.querySelectorAll('#navBtnContact, .nav-btn-contact');
+  navContactBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal('Vamos Conversar! ✨', 'Entre em contato para oportunidades de estágio e projetos em Design, Games, Web e Mobile.');
     });
-  }
+  });
 
   if (btnStar) {
     btnStar.addEventListener('click', (e) => {

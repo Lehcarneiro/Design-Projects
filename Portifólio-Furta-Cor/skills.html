@@ -563,25 +563,30 @@
   <div class="page-container">
 
     <!-- Header Navigation -->
-    <header class="inner-page-header">
-      <a href="index.html" class="btn-back" aria-label="Voltar para o início">
-        <span>←</span> Início
+    <header class="header-top inner-header">
+      <a href="index.html" class="btn-arrow-corner" aria-label="Voltar para o Início" title="Voltar para o Início">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
       </a>
 
-      <nav class="header-nav-links" aria-label="Navegação interna">
-        <a href="autora.html" class="header-nav-btn">Sobre Mim</a>
-        <a href="skills.html" class="header-nav-btn active">Habilidades</a>
-        <a href="projetos.html" class="header-nav-btn">Projetos</a>
+      <nav class="site-nav-container" aria-label="Menu principal">
+        <a href="index.html" class="nav-pill-btn">Início</a>
+        <a href="autora.html" class="nav-pill-btn">Sobre Mim</a>
+        <a href="skills.html" class="nav-pill-btn active">Habilidades</a>
+        <a href="projetos.html" class="nav-pill-btn">Projetos</a>
+        <button type="button" class="nav-pill-btn nav-btn-contact" id="navBtnContact">Contato</button>
       </nav>
 
-      <div class="name-subtitle" style="font-size: 1.05rem;">Portifólio Furta-Cor</div>
+      <div class="header-spacer" aria-hidden="true"></div>
     </header>
 
     <main class="skills-page-wrapper">
 
       <!-- Skills Header Section -->
       <header class="skills-header-card">
-        <div class="skills-capsule">✨ Habilidades Técnicas & Stack</div>
+        <div class="skills-capsule">Habilidades Técnicas & Stack</div>
         <h1 class="skills-title">Skills em Programação</h1>
         <p class="skills-subtitle">
           Competências práticas e acadêmicas desenvolvidas em projetos reais de Front-End, Jogos com Unity, Mobile Android e Engenharia de Software no IFSULDEMINAS.

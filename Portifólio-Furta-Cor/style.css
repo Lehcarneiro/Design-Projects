@@ -214,18 +214,70 @@ button {
 }
 
 /* ==========================================================================
-   Header / Top Navigation
+   Header / Top Navigation (Matching image.png)
    ========================================================================== */
 .header-top {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
   position: relative;
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
 }
 
-/* Left Circle Arrow Button */
+.header-top.inner-header {
+  justify-content: space-between;
+}
+
+/* Unified Navbar Capsule Buttons */
+.site-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.nav-pill-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65rem 1.65rem;
+  border-radius: 9999px;
+  background: #ffffff;
+  border: 1.5px solid #e4e4e7;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #18181b;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+
+.nav-pill-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(248, 0, 123, 0.35);
+  box-shadow: 0 6px 18px rgba(248, 0, 123, 0.18);
+  color: var(--color-primary-pink);
+}
+
+.nav-pill-btn.active {
+  background: var(--grad-badge);
+  background-size: 200% 200%;
+  color: #fa0079;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 20px rgba(138, 222, 211, 0.45),
+              0 2px 8px rgba(248, 0, 123, 0.2);
+  transform: translateY(-2px) scale(1.02);
+  animation: badge-shimmer 10s ease-in-out infinite alternate;
+}
+
+/* Left Circle Arrow Button (for inner pages) */
 .btn-arrow-corner {
   width: 48px;
   height: 48px;
@@ -241,6 +293,7 @@ button {
               box-shadow 0.25s ease,
               border-color 0.25s ease;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .btn-arrow-corner::before {
@@ -263,24 +316,12 @@ button {
 }
 
 .btn-arrow-corner:hover {
-  transform: scale(1.1) rotate(6deg);
+  transform: scale(1.1) rotate(-6deg);
   box-shadow: 0 6px 20px var(--color-pink-glow);
 }
 
 .btn-arrow-corner:hover svg {
-  transform: translate(2px, -2px);
-}
-
-/* Center Icons Bar */
-.icons-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-  margin: 0 auto;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-3px);
 }
 
 .icon-item {
