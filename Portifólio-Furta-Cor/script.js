@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  if (btnLightning) {
+  if (btnLightning && btnLightning.tagName === 'BUTTON') {
     btnLightning.addEventListener('click', () => {
       openModal('Stack & Habilidades ⚡', 'Especializada em Desenvolvimento Front-end, Back-end, UI/UX Design e Desenvolvimento de Jogos.');
     });

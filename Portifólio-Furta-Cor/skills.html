@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habilidades & Skills | Letícia Carneiro</title>
+
+  <!-- Google Fonts: Unbounded, Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Syne:wght@700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Specific styles for Skills Page with Tabs */
+    .skills-page-wrapper {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .inner-page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 2px solid #18181b;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #18181b;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .btn-back:hover {
+      background: var(--grad-badge);
+      color: var(--color-primary-pink);
+      transform: translateX(-4px);
+      box-shadow: 0 6px 18px rgba(248, 0, 123, 0.2);
+    }
+
+    .header-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .header-nav-btn {
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(24, 24, 27, 0.15);
+      font-family: var(--font-display);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #27272a;
+      transition: all 0.2s ease;
+    }
+
+    .header-nav-btn:hover, .header-nav-btn.active {
+      background: var(--grad-badge);
+      color: var(--color-primary-pink);
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(138, 222, 211, 0.35);
+    }
+
+    /* Hero Headline for Skills */
+    .skills-header-card {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .skills-capsule {
+      display: inline-block;
+      background: var(--grad-badge);
+      background-size: 200% 200%;
+      border-radius: 999px;
+      padding: 0.5rem 1.6rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 18px rgba(138, 222, 211, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      animation: badge-shimmer 10s ease-in-out infinite alternate;
+    }
+
+    .skills-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 2.9rem);
+      font-weight: 900;
+      color: var(--color-primary-pink);
+      text-transform: uppercase;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 0.8rem;
+      text-shadow: 0 2px 14px rgba(248, 0, 123, 0.15);
+    }
+
+    .skills-subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.95rem, 2vw, 1.12rem);
+      color: #52525b;
+      max-width: 680px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* Summary Highlights Ribbon */
+    .skills-summary-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .summary-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 1.2rem 1.4rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.06);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .summary-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px -6px rgba(248, 0, 123, 0.15);
+    }
+
+    .summary-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--grad-badge);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .summary-info h4 {
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .summary-info p {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      color: #3f3f46;
+      font-weight: 600;
+    }
+
+    /* =========================================================================
+       Interactive Tabs Navigation
+       ========================================================================= */
+    .tabs-nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 2.2rem;
+      background: rgba(255, 255, 255, 0.65);
+      backdrop-filter: blur(10px);
+      padding: 0.6rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.85);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      background: transparent;
+      border: none;
+      font-family: var(--font-display);
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #52525b;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .tab-btn:hover {
+      color: var(--color-primary-pink);
+      background: rgba(255, 255, 255, 0.9);
+      transform: translateY(-2px);
+    }
+
+    .tab-btn.active {
+      background: var(--grad-badge);
+      color: var(--color-primary-pink);
+      box-shadow: 0 6px 18px rgba(138, 222, 211, 0.4),
+                  0 2px 8px rgba(248, 0, 123, 0.15);
+      transform: translateY(-2px) scale(1.02);
+    }
+
+    .tab-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: rgba(24, 24, 27, 0.08);
+      font-size: 0.7rem;
+      font-family: var(--font-body);
+      font-weight: 700;
+      color: inherit;
+    }
+
+    .tab-btn.active .tab-count {
+      background: #ffffff;
+      color: var(--color-primary-pink);
+    }
+
+    /* =========================================================================
+       Skills Grid & Cards
+       ========================================================================= */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+      border-radius: 26px;
+      padding: 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-floating);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--grad-furta-cor-1);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 20px 42px -10px rgba(138, 222, 211, 0.45),
+                  0 8px 24px -4px rgba(248, 0, 123, 0.2);
+    }
+
+    .skill-card:hover::before {
+      opacity: 1;
+    }
+
+    .skill-card.hidden {
+      display: none;
+    }
+
+    .skill-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .skill-icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: var(--grad-badge);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 14px rgba(138, 222, 211, 0.3);
+      flex-shrink: 0;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      background: rgba(248, 0, 123, 0.08);
+      border: 1px solid rgba(248, 0, 123, 0.2);
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .skill-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #18181b;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    .skill-description {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #52525b;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+    }
+
+    .skill-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: auto;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(24, 24, 27, 0.06);
+    }
+
+    .highlight-pill {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #3f3f46;
+      background: #f4f4f5;
+      padding: 0.25rem 0.65rem;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .skill-card:hover .highlight-pill {
+      background: #ffffff;
+      color: var(--color-primary-pink);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* =========================================================================
+       Academic & Competency Extra Section
+       ========================================================================= */
+    .academic-section {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      border-radius: 30px;
+      padding: 2.2rem 2.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-floating);
+      margin-bottom: 3rem;
+    }
+
+    .academic-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      margin-bottom: 1.4rem;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .academic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .academic-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.4rem;
+      border: 1px solid #f0f0f2;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .academic-card::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 15%;
+      bottom: 15%;
+      width: 4px;
+      background: var(--grad-badge);
+      border-radius: 0 4px 4px 0;
+    }
+
+    .academic-period {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      margin-bottom: 0.4rem;
+    }
+
+    .academic-course {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #18181b;
+      margin-bottom: 0.3rem;
+    }
+
+    .academic-inst {
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: #52525b;
+      font-weight: 600;
+    }
+
+    /* Search / Filter bar */
+    .skills-filter-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-search-input {
+      width: 100%;
+      max-width: 420px;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      border: 1.5px solid rgba(24, 24, 27, 0.12);
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(8px);
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #18181b;
+      outline: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+    }
+
+    .skills-search-input:focus {
+      border-color: var(--color-primary-pink);
+      box-shadow: 0 0 0 4px rgba(248, 0, 123, 0.15);
+      background: #ffffff;
+    }
+
+    /* Bottom Actions */
+    .skills-footer-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .tabs-nav-container {
+        border-radius: 20px;
+        padding: 0.5rem;
+      }
+      .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.76rem;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+      .academic-section {
+        padding: 1.6rem 1.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       Background Iridescent Blobs
+       ========================================================================= -->
+  <div class="background-blobs" aria-hidden="true">
+    <div class="bg-blob-tr"></div>
+    <div class="bg-blob-bl"></div>
+  </div>
+
+  <!-- =========================================================================
+       SVG Defs for Furta-Cor Gradients
+       ========================================================================= -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="fcHeart" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ec9bc5" />
+        <stop offset="30%" stop-color="#ec9bc5" />
+        <stop offset="65%" stop-color="#8bf5e4" />
+        <stop offset="100%" stop-color="#d1b8fe" />
+      </linearGradient>
+      <linearGradient id="fcGlobe" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#93c5fd" />
+        <stop offset="40%" stop-color="#86efee" />
+        <stop offset="70%" stop-color="#ec9bc5" />
+        <stop offset="100%" stop-color="#ec9bc5" />
+      </linearGradient>
+      <linearGradient id="fcLightning" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#67e8f9" />
+        <stop offset="50%" stop-color="#a7f3d0" />
+        <stop offset="100%" stop-color="#fef08a" />
+      </linearGradient>
+      <linearGradient id="fcMail" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#bae6fd" />
+        <stop offset="50%" stop-color="#c4b5fd" />
+        <stop offset="100%" stop-color="#fbcfe8" />
+      </linearGradient>
+      <linearGradient id="fcBubble" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffd5ec" />
+        <stop offset="30%" stop-color="#fef08a" />
+        <stop offset="70%" stop-color="#86efee" />
+        <stop offset="100%" stop-color="#c4b5fd" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="page-container">
+
+    <!-- Header Navigation -->
+    <header class="inner-page-header">
+      <a href="index.html" class="btn-back" aria-label="Voltar para o início">
+        <span>←</span> Início
+      </a>
+
+      <nav class="header-nav-links" aria-label="Navegação interna">
+        <a href="autora.html" class="header-nav-btn">Sobre Mim</a>
+        <a href="skills.html" class="header-nav-btn active">Habilidades</a>
+        <a href="projetos.html" class="header-nav-btn">Projetos</a>
+      </nav>
+
+      <div class="name-subtitle" style="font-size: 1.05rem;">Portifólio Furta-Cor</div>
+    </header>
+
+    <main class="skills-page-wrapper">
+
+      <!-- Skills Header Section -->
+      <header class="skills-header-card">
+        <div class="skills-capsule">✨ Habilidades Técnicas & Stack</div>
+        <h1 class="skills-title">Skills em Programação</h1>
+        <p class="skills-subtitle">
+          Competências práticas e acadêmicas desenvolvidas em projetos reais de Front-End, Jogos com Unity, Mobile Android e Engenharia de Software no IFSULDEMINAS.
+        </p>
+      </header>
+
+      <!-- Quick Summary Highlights Bar -->
+      <section class="skills-summary-bar" aria-label="Resumo de competências">
+        <div class="summary-card">
+          <div class="summary-icon">💻</div>
+          <div class="summary-info">
+            <h4>Linguagens</h4>
+            <p>JavaScript, C#, Java, C++, C</p>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">🌐</div>
+          <div class="summary-info">
+            <h4>Front-End Web</h4>
+            <p>React, HTML5, CSS3, UI/UX</p>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">🎮</div>
+          <div class="summary-info">
+            <h4>Games & Mobile</h4>
+            <p>Unity, C#, Android Java, POO</p>
+          </div>
+        </div>
+
+        <div class="summary-card">
+          <div class="summary-icon">⚡</div>
+          <div class="summary-info">
+            <h4>Ferramentas</h4>
+            <p>Git, GitHub, Figma, Métodos</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search / Quick Filter Input -->
+      <div class="skills-filter-wrapper">
+        <input 
+          type="text" 
+          id="skillSearchInput" 
+          class="skills-search-input" 
+          placeholder="🔍 Buscar tecnologia ou skill (ex: React, C#, Unity)..." 
+          aria-label="Buscar skills"
+        />
+      </div>
+
+      <!-- =====================================================================
+           Interactive Tabs Navigation Bar (Abas)
+           ===================================================================== -->
+      <nav class="tabs-nav-container" aria-label="Filtrar categorias de skills" role="tablist">
+        <button type="button" class="tab-btn active" data-category="all" role="tab" aria-selected="true">
+          <span>✨ Todas as Skills</span>
+          <span class="tab-count" id="countAll">11</span>
+        </button>
+
+        <button type="button" class="tab-btn" data-category="languages" role="tab" aria-selected="false">
+          <span>💻 Linguagens</span>
+          <span class="tab-count" id="countLang">5</span>
+        </button>
+
+        <button type="button" class="tab-btn" data-category="frontend" role="tab" aria-selected="false">
+          <span>🌐 Front-End</span>
+          <span class="tab-count" id="countFront">3</span>
+        </button>
+
+        <button type="button" class="tab-btn" data-category="games-mobile" role="tab" aria-selected="false">
+          <span>🎮 Jogos & Mobile</span>
+          <span class="tab-count" id="countGames">2</span>
+        </button>
+
+        <button type="button" class="tab-btn" data-category="tools-methods" role="tab" aria-selected="false">
+          <span>🛠️ Ferramentas & POO</span>
+          <span class="tab-count" id="countTools">3</span>
+        </button>
+      </nav>
+
+      <!-- =====================================================================
+           Skills Cards Grid (Extraídas Fielmente do Currículo)
+           ===================================================================== -->
+      <section class="skills-grid" id="skillsGrid" aria-label="Lista de habilidades">
+
+        <!-- 1. JavaScript -->
+        <article class="skill-card" data-category="languages frontend" data-keywords="javascript js frontend web programacao logica script">
+          <div class="skill-top">
+            <div class="skill-icon-badge">⚡</div>
+            <span class="skill-tag">Linguagem / Web</span>
+          </div>
+          <div>
+            <h2 class="skill-name">JavaScript (ES6+)</h2>
+            <p class="skill-description">
+              Sólida base em lógica de programação, manipulação do DOM, funções assíncronas, consumo de APIs e integração com ecossistemas front-end modernos.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Lógica de Programação</span>
+            <span class="highlight-pill">ES6+</span>
+            <span class="highlight-pill">Front-End</span>
+            <span class="highlight-pill">Web Dinâmica</span>
+          </div>
+        </article>
+
+        <!-- 2. React -->
+        <article class="skill-card" data-category="frontend" data-keywords="react reactjs frontend componentizacao web interface ui estado">
+          <div class="skill-top">
+            <div class="skill-icon-badge">⚛️</div>
+            <span class="skill-tag">Front-End Framework</span>
+          </div>
+          <div>
+            <h2 class="skill-name">React</h2>
+            <p class="skill-description">
+              Experiência prática desenvolvendo a interface da <strong>Plataforma Nacional de Concurso de Desenho</strong> (integrando 5+ campi do IFSULDEMINAS), aplicando componentização, galerias, submissão de trabalhos e votação em tempo real.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Componentização</span>
+            <span class="highlight-pill">Votação em Tempo Real</span>
+            <span class="highlight-pill">Performance Front-End</span>
+            <span class="highlight-pill">IFSULDEMINAS</span>
+          </div>
+        </article>
+
+        <!-- 3. C# -->
+        <article class="skill-card" data-category="languages games-mobile" data-keywords="c# csharp unity jogos games poo desenvolvimento">
+          <div class="skill-top">
+            <div class="skill-icon-badge">🎯</div>
+            <span class="skill-tag">Linguagem / Jogos</span>
+          </div>
+          <div>
+            <h2 class="skill-name">C#</h2>
+            <p class="skill-description">
+              Utilizado no desenvolvimento de sistemas de jogabilidade, mecânicas interativas em <strong>Unity</strong> e projetos acadêmicos e pessoais (como Flappy Bird e FPS), com foco em Programação Orientada a Objetos.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Unity Game Engine</span>
+            <span class="highlight-pill">Sistemas de Jogabilidade</span>
+            <span class="highlight-pill">POO</span>
+            <span class="highlight-pill">Mecânicas Interativas</span>
+          </div>
+        </article>
+
+        <!-- 4. Unity -->
+        <article class="skill-card" data-category="games-mobile" data-keywords="unity unity3d games jogos game dev bolsista fps flappy bird">
+          <div class="skill-top">
+            <div class="skill-icon-badge">🎮</div>
+            <span class="skill-tag">Game Engine / Jogos</span>
+          </div>
+          <div>
+            <h2 class="skill-name">Unity</h2>
+            <p class="skill-description">
+              Atuação como bolsista e desenvolvedora de jogos no IFSULDEMINAS: prototipação, implementação de mecânicas 2D/3D, testes, depuração e ciclo completo de vida de jogos interativos.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Desenvolvimento de Jogos</span>
+            <span class="highlight-pill">Prototipação Iterativa</span>
+            <span class="highlight-pill">Testes & Depuração</span>
+            <span class="highlight-pill">Bolsista IFSULDEMINAS</span>
+          </div>
+        </article>
+
+        <!-- 5. Java & Android -->
+        <article class="skill-card" data-category="languages games-mobile" data-keywords="java android mobile poo turismo aplicativo app">
+          <div class="skill-top">
+            <div class="skill-icon-badge">☕</div>
+            <span class="skill-tag">Linguagem / Mobile</span>
+          </div>
+          <div>
+            <h2 class="skill-name">Java & Android</h2>
+            <p class="skill-description">
+              Desenvolvimento e prototipagem de aplicativo mobile para turismo regional em Minas Gerais, aplicando boas práticas de desenvolvimento móvel e forte domínio de conceitos de POO.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Android Mobile</span>
+            <span class="highlight-pill">POO</span>
+            <span class="highlight-pill">App de Turismo MG</span>
+            <span class="highlight-pill">Prototipagem Mobile</span>
+          </div>
+        </article>
+
+        <!-- 6. C++ -->
+        <article class="skill-card" data-category="languages" data-keywords="c++ cpp computacao engenharia algoritmos estrutura dados">
+          <div class="skill-top">
+            <div class="skill-icon-badge">⚙️</div>
+            <span class="skill-tag">Linguagem / Engenharia</span>
+          </div>
+          <div>
+            <h2 class="skill-name">C++</h2>
+            <p class="skill-description">
+              Estudo e aplicação em Engenharia da Computação, focado em estruturas de dados, algoritmos, gerenciamento eficiente de memória e resolução de problemas técnicos complexos.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Engenharia da Computação</span>
+            <span class="highlight-pill">Algoritmos</span>
+            <span class="highlight-pill">Estruturas de Dados</span>
+            <span class="highlight-pill">Alto Desempenho</span>
+          </div>
+        </article>
+
+        <!-- 7. C -->
+        <article class="skill-card" data-category="languages" data-keywords="c programacao baixo nivel ponteiros memoria logica">
+          <div class="skill-top">
+            <div class="skill-icon-badge">🔧</div>
+            <span class="skill-tag">Linguagem Base</span>
+          </div>
+          <div>
+            <h2 class="skill-name">C</h2>
+            <p class="skill-description">
+              Fundamentos sólidos em lógica de programação, ponteiros, alocação de memória e compreensão da arquitetura de software e hardware em nível de sistema.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Fundamentos da Computação</span>
+            <span class="highlight-pill">Gerenciamento de Memória</span>
+            <span class="highlight-pill">Lógica Estruturada</span>
+          </div>
+        </article>
+
+        <!-- 8. HTML5 & CSS3 -->
+        <article class="skill-card" data-category="frontend" data-keywords="html5 css3 web design responsivo layout estilização flexbox grid">
+          <div class="skill-top">
+            <div class="skill-icon-badge">🎨</div>
+            <span class="skill-tag">Web & Estilização</span>
+          </div>
+          <div>
+            <h2 class="skill-name">HTML5 & CSS3</h2>
+            <p class="skill-description">
+              Criação de layouts responsivos, modernos e semânticos com animações fluidas, gradientes furta-cor, design system customizado, acessibilidade e micro-interações.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Design Responsivo</span>
+            <span class="highlight-pill">CSS Grid & Flexbox</span>
+            <span class="highlight-pill">Identidade Visual Furta-Cor</span>
+            <span class="highlight-pill">UI Semântica</span>
+          </div>
+        </article>
+
+        <!-- 9. Git & GitHub -->
+        <article class="skill-card" data-category="tools-methods" data-keywords="git github devops versionamento controle versao branches workflow">
+          <div class="skill-top">
+            <div class="skill-icon-badge">🐙</div>
+            <span class="skill-tag">DevOps & Versionamento</span>
+          </div>
+          <div>
+            <h2 class="skill-name">Git & GitHub</h2>
+            <p class="skill-description">
+              Versionamento profissional de código, gerenciamento de branches, colaboração em equipe em projetos acadêmicos e repositórios abertos no GitHub.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Controle de Versão</span>
+            <span class="highlight-pill">Git Flow</span>
+            <span class="highlight-pill">Trabalho em Equipe</span>
+            <span class="highlight-pill">GitHub</span>
+          </div>
+        </article>
+
+        <!-- 10. Figma & UI/UX Design -->
+        <article class="skill-card" data-category="tools-methods frontend" data-keywords="figma design ui ux prototipagem ej turing marketing comunicacao">
+          <div class="skill-top">
+            <div class="skill-icon-badge">✨</div>
+            <span class="skill-tag">Design & Prototipagem</span>
+          </div>
+          <div>
+            <h2 class="skill-name">Figma & UI/UX</h2>
+            <p class="skill-description">
+              Criação de materiais visuais, protótipos navegáveis, wireframes e design de interfaces mantendo consistência com identidades visuais marcantes (experiência na EJ Turing).
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">UI/UX Design</span>
+            <span class="highlight-pill">EJ Turing</span>
+            <span class="highlight-pill">Prototipagem Digital</span>
+            <span class="highlight-pill">Identidade Visual</span>
+          </div>
+        </article>
+
+        <!-- 11. Programação Orientada a Objetos (POO) & Boas Práticas -->
+        <article class="skill-card" data-category="tools-methods" data-keywords="poo orientacao objetos logica programacao resolucao problemas documentacao">
+          <div class="skill-top">
+            <div class="skill-icon-badge">🧩</div>
+            <span class="skill-tag">Arquitetura & Métodos</span>
+          </div>
+          <div>
+            <h2 class="skill-name">POO & Lógica de Programação</h2>
+            <p class="skill-description">
+              Aplicação de abstração, encapsulamento, herança e polimorfismo em C#, Java e C++, unindo resolução analítica de problemas técnicos e documentação clara de projetos.
+            </p>
+          </div>
+          <div class="skill-highlights">
+            <span class="highlight-pill">Engenharia de Software</span>
+            <span class="highlight-pill">Código Modular</span>
+            <span class="highlight-pill">Resolução de Problemas</span>
+            <span class="highlight-pill">Documentação</span>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- =====================================================================
+           Formação Acadêmica & Base Técnica (IFSULDEMINAS)
+           ===================================================================== -->
+      <section class="academic-section" aria-label="Formação Acadêmica">
+        <h2 class="academic-title">
+          <span>🎓</span> Formação Acadêmica & Base Técnica
+        </h2>
+        <div class="academic-grid">
+          <div class="academic-card">
+            <span class="academic-period">2024 - 2029 (Em andamento)</span>
+            <h3 class="academic-course">Bacharelado em Engenharia da Computação</h3>
+            <p class="academic-inst">Instituto Federal do Sul de Minas Gerais (IFSULDEMINAS) — Campus Poços de Caldas</p>
+          </div>
+
+          <div class="academic-card">
+            <span class="academic-period">2021 - 2023</span>
+            <h3 class="academic-course">Técnico em Informática Integrado</h3>
+            <p class="academic-inst">Instituto Federal do Sul de Minas Gerais (IFSULDEMINAS) — Campus Poços de Caldas</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Action CTAs -->
+      <footer class="skills-footer-cta">
+        <a href="projetos.html" class="btn-cta-projetos">
+          <span>VER PROJETOS</span>
+          <span class="cta-arrow-triangle" aria-hidden="true"></span>
+        </a>
+        <a href="autora.html" class="btn-back" style="padding: 0.85rem 1.8rem;">
+          <span>💖</span> Conhecer Sobre Mim
+        </a>
+      </footer>
+
+    </main>
+
+    <!-- Footer Bar -->
+    <footer class="footer-bar" style="justify-content: center; margin-top: 2rem;">
+      <button type="button" class="chat-bubble-launcher" id="chatLauncher" aria-label="Abrir canais de contato" title="Falar com Letícia">
+        <svg class="chat-bubble-svg" viewBox="0 0 80 60" fill="none">
+          <path d="M12 8C6 8 2 12 2 18V36C2 42 6 46 12 46H20V56L34 46H68C74 46 78 42 78 36V18C78 12 74 8 68 8H12Z"
+                fill="url(#fcBubble)"
+                stroke="#ffffff"
+                stroke-width="1.5" />
+          <circle cx="28" cy="27" r="4.2" fill="#18181b" />
+          <circle cx="40" cy="27" r="4.2" fill="#18181b" />
+          <circle cx="52" cy="27" r="4.2" fill="#18181b" />
+        </svg>
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="btn-modal-close" id="modalCloseBtn" aria-label="Fechar modal">&times;</button>
+      <h2 class="modal-title">Vamos Conversar! ✨</h2>
+      <p class="modal-desc">
+        Entre em contato para oportunidades de estágio, projetos em React, Unity, Mobile e Full Stack.
+      </p>
+
+      <div class="modal-links-grid">
+        <a href="mailto:letici4.carneiro@gmail.com" class="modal-link-btn" id="emailContactLink">
+          <span>✉️</span> letici4.carneiro@gmail.com
+        </a>
+        <a href="https://github.com/Lehcarneiro" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+          <span>💻</span> github.com/Lehcarneiro
+        </a>
+        <a href="https://linkedin.com/in/letícia-maria-56668b290" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+          <span>💼</span> LinkedIn Letícia Maria
+        </a>
+        <a href="projetos.html" class="modal-link-btn">
+          <span>🎨</span> Ver Projetos
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+  <!-- Interactive Tabs and Search Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const skillCards = document.querySelectorAll('.skill-card');
+      const searchInput = document.getElementById('skillSearchInput');
+
+      let currentCategory = 'all';
+
+      // Update Counts
+      function updateCounts() {
+        const counts = {
+          all: skillCards.length,
+          languages: 0,
+          frontend: 0,
+          'games-mobile': 0,
+          'tools-methods': 0
+        };
+
+        skillCards.forEach(card => {
+          const categories = card.dataset.category || '';
+          if (categories.includes('languages')) counts.languages++;
+          if (categories.includes('frontend')) counts.frontend++;
+          if (categories.includes('games-mobile')) counts['games-mobile']++;
+          if (categories.includes('tools-methods')) counts['tools-methods']++;
+        });
+
+        const countAll = document.getElementById('countAll');
+        const countLang = document.getElementById('countLang');
+        const countFront = document.getElementById('countFront');
+        const countGames = document.getElementById('countGames');
+        const countTools = document.getElementById('countTools');
+
+        if (countAll) countAll.textContent = counts.all;
+        if (countLang) countLang.textContent = counts.languages;
+        if (countFront) countFront.textContent = counts.frontend;
+        if (countGames) countGames.textContent = counts['games-mobile'];
+        if (countTools) countTools.textContent = counts['tools-methods'];
+      }
+
+      updateCounts();
+
+      // Filter Function
+      function filterSkills() {
+        const searchTerm = (searchInput ? searchInput.value : '').toLowerCase().trim();
+
+        skillCards.forEach(card => {
+          const categories = (card.dataset.category || '').split(' ');
+          const keywords = (card.dataset.keywords || '').toLowerCase();
+          const cardText = card.innerText.toLowerCase();
+
+          const matchesCategory = currentCategory === 'all' || categories.includes(currentCategory);
+          const matchesSearch = !searchTerm || keywords.includes(searchTerm) || cardText.includes(searchTerm);
+
+          if (matchesCategory && matchesSearch) {
+            card.classList.remove('hidden');
+            card.style.animation = 'hero-fade-in 0.4s ease forwards';
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      }
+
+      // Tab Switching
+      tabButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabButtons.forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-selected', 'false');
+          });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+
+          currentCategory = btn.dataset.category;
+          filterSkills();
+        });
+      });
+
+      // Search Filtering
+      if (searchInput) {
+        searchInput.addEventListener('input', filterSkills);
+      }
+    });
+  </script>
+
+</body>
+</html>
