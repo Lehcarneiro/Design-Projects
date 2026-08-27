@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos | Letícia Carneiro</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Syne:wght@700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .inner-page-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.4rem;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 2px solid #18181b;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: #18181b;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    .btn-back:hover {
+      background: var(--grad-badge);
+      color: var(--color-primary-pink);
+      transform: translateX(-4px);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+      font-weight: 900;
+      color: var(--color-primary-pink);
+      text-align: center;
+      margin-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+
+    .project-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 28px;
+      padding: 1.8rem;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-floating);
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -10px rgba(138, 222, 211, 0.4),
+                  0 8px 20px -4px rgba(248, 0, 123, 0.2);
+    }
+
+    .project-badge {
+      display: inline-block;
+      align-self: flex-start;
+      padding: 0.35rem 0.9rem;
+      background: var(--grad-badge);
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      margin-bottom: 1rem;
+    }
+
+    .project-card-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #18181b;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-card-desc {
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      color: #52525b;
+      line-height: 1.55;
+      margin-bottom: 1.4rem;
+    }
+
+    .project-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--color-primary-pink);
+      transition: gap 0.2s ease;
+    }
+
+    .project-card:hover .project-btn {
+      gap: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Blobs -->
+  <div class="background-blobs" aria-hidden="true">
+    <div class="bg-blob-tr"></div>
+    <div class="bg-blob-bl"></div>
+  </div>
+
+  <div class="page-container">
+    <header class="inner-page-header">
+      <a href="index.html" class="btn-back">
+        <span>←</span> Início
+      </a>
+      <div class="name-subtitle" style="font-size: 1.1rem;">Portifólio Furta-Cor</div>
+    </header>
+
+    <main>
+      <h1 class="section-title">Galeria de Projetos</h1>
+
+      <div class="projects-grid">
+        <!-- Projeto 1: Game Dev -->
+        <article class="project-card">
+          <div>
+            <span class="project-badge">Game Dev</span>
+            <h2 class="project-card-title">Neon Odyssey</h2>
+            <p class="project-card-desc">
+              Jogo de aventura 2D com mecânicas dinâmicas, arte furta-cor estilizada e trilha sonora imersiva.
+            </p>
+          </div>
+          <a href="#" class="project-btn">Ver Detalhes ➔</a>
+        </article>
+
+        <!-- Projeto 2: Web Dev / Design -->
+        <article class="project-card">
+          <div>
+            <span class="project-badge">UI/UX & Web</span>
+            <h2 class="project-card-title">Holo Studio</h2>
+            <p class="project-card-desc">
+              Interface moderna com micro-interações fluidas, estética Y2K / iridescente e performance otimizada.
+            </p>
+          </div>
+          <a href="#" class="project-btn">Ver Detalhes ➔</a>
+        </article>
+
+        <!-- Projeto 3: Full Stack -->
+        <article class="project-card">
+          <div>
+            <span class="project-badge">Full Stack</span>
+            <h2 class="project-card-title">PixelCraft Engine</h2>
+            <p class="project-card-desc">
+              Plataforma completa para prototipagem de jogos no navegador com backend em tempo real.
+            </p>
+          </div>
+          <a href="#" class="project-btn">Ver Detalhes ➔</a>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer-bar" style="justify-content: center;">
+      <a href="autora.html" class="btn-cta-projetos">
+        <span>SOBRE A AUTORA</span>
+        <span class="cta-arrow-triangle" aria-hidden="true"></span>
+      </a>
+    </footer>
+  </div>
+</body>
+</html>

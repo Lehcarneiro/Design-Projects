@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letícia Carneiro | Portfólio</title>
+
+  <!-- Google Fonts: Unbounded, Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Syne:wght@700;800&family=Unbounded:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       Background Iridescent / Furta-Cor Organic Blobs
+       ========================================================================= -->
+  <div class="background-blobs" aria-hidden="true">
+    <div class="bg-blob-tr"></div>
+    <div class="bg-blob-bl"></div>
+  </div>
+
+  <!-- =========================================================================
+       SVG Defs for Furta-Cor Icon Gradients & Textures
+       ========================================================================= -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <!-- Furta-Cor Gradient 1 (Heart / Pastel Rainbow) -->
+      <linearGradient id="fcHeart" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffd1ea" />
+        <stop offset="30%" stop-color="#fff389" />
+        <stop offset="65%" stop-color="#8bf5e4" />
+        <stop offset="100%" stop-color="#d1b8fe" />
+      </linearGradient>
+
+      <!-- Furta-Cor Gradient 2 (Globe / Aqua & Yellow) -->
+      <linearGradient id="fcGlobe" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#93c5fd" />
+        <stop offset="40%" stop-color="#86efee" />
+        <stop offset="70%" stop-color="#fff185" />
+        <stop offset="100%" stop-color="#fbcfe8" />
+      </linearGradient>
+
+      <!-- Furta-Cor Gradient 3 (Lightning / Vibrant Aqua & Mint) -->
+      <linearGradient id="fcLightning" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#67e8f9" />
+        <stop offset="50%" stop-color="#a7f3d0" />
+        <stop offset="100%" stop-color="#fef08a" />
+      </linearGradient>
+
+      <!-- Furta-Cor Gradient 4 (Envelope / Blue, Purple & Pink) -->
+      <linearGradient id="fcMail" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#bae6fd" />
+        <stop offset="50%" stop-color="#c4b5fd" />
+        <stop offset="100%" stop-color="#fbcfe8" />
+      </linearGradient>
+
+      <!-- Furta-Cor Gradient 5 (Eye / Multichrome) -->
+      <linearGradient id="fcEye" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#fef08a" />
+        <stop offset="45%" stop-color="#8bf5e4" />
+        <stop offset="80%" stop-color="#d8b4fe" />
+        <stop offset="100%" stop-color="#fbcfe8" />
+      </linearGradient>
+
+      <!-- Furta-Cor Gradient 6 (Asterisk / Star Iridescent) -->
+      <linearGradient id="fcStar" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffd6eb" />
+        <stop offset="35%" stop-color="#a5f3fc" />
+        <stop offset="70%" stop-color="#fef08a" />
+        <stop offset="100%" stop-color="#c4b5fd" />
+      </linearGradient>
+
+      <!-- Chat Bubble Gradient -->
+      <linearGradient id="fcBubble" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#ffd5ec" />
+        <stop offset="30%" stop-color="#fef08a" />
+        <stop offset="70%" stop-color="#86efee" />
+        <stop offset="100%" stop-color="#c4b5fd" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <!-- =========================================================================
+       Main Page Container
+       ========================================================================= -->
+  <div class="page-container">
+
+    <!-- Top Navigation Header -->
+    <header class="header-top">
+      <!-- Top Left Arrow Button -->
+      <a href="autora.html" class="btn-arrow-corner" aria-label="Sobre a Autora" title="Sobre Letícia Carneiro">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+
+      <!-- Center Icons Group (Interactive Furta-Cor Elements) -->
+      <nav class="icons-bar" aria-label="Menu de Ícones Interativos">
+
+        <!-- 1. Heart (Sobre Mim / Valores) -->
+        <a href="autora.html" class="icon-item" data-tooltip="Sobre Mim" aria-label="Sobre Mim">
+          <svg viewBox="0 0 50 50" fill="none">
+            <path d="M25 43.5C25 43.5 6 31.5 6 18C6 11.5 11 7 17.5 7C21.5 7 24 9.5 25 11.5C26 9.5 28.5 7 32.5 7C39 7 44 11.5 44 18C44 31.5 25 43.5 25 43.5Z"
+                  fill="url(#fcHeart)"
+                  stroke="#18181b"
+                  stroke-width="3"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+          </svg>
+        </a>
+
+        <!-- 2. Globe (Web & Idiomas / Conexões) -->
+        <button type="button" class="icon-item" id="btnGlobe" data-tooltip="Conexões & Redes" aria-label="Redes e Conexões">
+          <svg viewBox="0 0 50 50" fill="none">
+            <circle cx="25" cy="25" r="19" fill="url(#fcGlobe)" stroke="#18181b" stroke-width="3" />
+            <!-- Horizontal Lines -->
+            <line x1="6" y1="25" x2="44" y2="25" stroke="#18181b" stroke-width="2.5" />
+            <path d="M8.5 17C14 19 36 19 41.5 17" stroke="#18181b" stroke-width="2" stroke-linecap="round" />
+            <path d="M8.5 33C14 31 36 31 41.5 33" stroke="#18181b" stroke-width="2" stroke-linecap="round" />
+            <!-- Vertical Meridian Ellipse -->
+            <ellipse cx="25" cy="25" rx="9.5" ry="19" stroke="#18181b" stroke-width="2.5" fill="none" />
+            <line x1="25" y1="6" x2="25" y2="44" stroke="#18181b" stroke-width="2" />
+          </svg>
+        </button>
+
+        <!-- 3. Lightning (Habilidades & Energia) -->
+        <button type="button" class="icon-item" id="btnLightning" data-tooltip="Skills & Tech" aria-label="Habilidades e Tech">
+          <svg viewBox="0 0 50 50" fill="none">
+            <polygon points="27,5 11,27 24,27 21,45 39,21 26,21"
+                     fill="url(#fcLightning)"
+                     stroke="#18181b"
+                     stroke-width="3"
+                     stroke-linejoin="round"
+                     stroke-linecap="round" />
+          </svg>
+        </button>
+
+        <!-- 4. Mail (Contato Direto) -->
+        <button type="button" class="icon-item" id="btnMail" data-tooltip="Enviar Mensagem" aria-label="Contato por Email">
+          <svg viewBox="0 0 50 50" fill="none">
+            <rect x="6" y="11" width="38" height="28" rx="4" fill="url(#fcMail)" stroke="#18181b" stroke-width="3" />
+            <path d="M6 14L25 28L44 14" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+
+        <!-- 5. Eye (Projetos / Ver Portfólio) -->
+        <a href="projetos.html" class="icon-item" data-tooltip="Ver Projetos" aria-label="Ver Projetos">
+          <svg viewBox="0 0 50 50" fill="none">
+            <path d="M5 25C11 14 39 14 45 25C39 36 11 36 5 25Z" fill="url(#fcEye)" stroke="#18181b" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="25" cy="25" r="7.5" stroke="#18181b" stroke-width="2.5" fill="#ffffff" />
+            <circle cx="25" cy="25" r="4" fill="#18181b" />
+          </svg>
+        </a>
+
+        <!-- 6. Asterisk / Star (Criatividade & Destaques) -->
+        <button type="button" class="icon-item" id="btnStar" data-tooltip="Magia Criativa" aria-label="Efeito Criativo">
+          <svg viewBox="0 0 50 50" fill="none">
+            <g fill="url(#fcStar)" stroke="#18181b" stroke-width="2.8" stroke-linejoin="round">
+              <path d="M25 5L28.5 18.5L42 16L32.5 25L42 34L28.5 31.5L25 45L21.5 31.5L8 34L17.5 25L8 16L21.5 18.5Z" />
+            </g>
+          </svg>
+        </button>
+
+      </nav>
+
+      <!-- Right spacer for balance on desktop -->
+      <div class="header-spacer" aria-hidden="true"></div>
+    </header>
+
+    <!-- =======================================================================
+         Main Hero Section
+         ======================================================================= -->
+    <main class="main-hero">
+
+      <!-- Letícia Carneiro Pill Badge -->
+      <div class="name-badge-container">
+        <section class="name-badge">
+          <h1 class="name-title">LETÍCIA CARNEIRO</h1>
+          <div class="name-subtitle-wrapper">
+            <span class="name-subtitle">Portifólio</span>
+          </div>
+        </section>
+      </div>
+
+      <!-- Centered Roles List -->
+      <ul class="roles-stack" aria-label="Especialidades">
+        <li class="role-entry">Designer</li>
+        <li class="role-entry">Game developer</li>
+        <li class="role-entry">Web developer</li>
+        <li class="role-entry">Full Stack developer</li>
+      </ul>
+
+      <!-- CTA Button to Projects -->
+      <div class="cta-wrapper">
+        <a href="projetos.html" class="btn-cta-projetos">
+          <span>PROJETOS</span>
+          <span class="cta-arrow-triangle" aria-hidden="true"></span>
+        </a>
+      </div>
+
+    </main>
+
+    <!-- =======================================================================
+         Footer with Interactive Floating Chat Bubble
+         ======================================================================= -->
+    <footer class="footer-bar">
+      <button type="button" class="chat-bubble-launcher" id="chatLauncher" aria-label="Abrir canais de contato" title="Falar com Letícia">
+        <svg class="chat-bubble-svg" viewBox="0 0 80 60" fill="none">
+          <!-- Speech bubble with cute tail -->
+          <path d="M12 8C6 8 2 12 2 18V36C2 42 6 46 12 46H20V56L34 46H68C74 46 78 42 78 36V18C78 12 74 8 68 8H12Z"
+                fill="url(#fcBubble)"
+                stroke="#ffffff"
+                stroke-width="1.5" />
+          <!-- Three Dots -->
+          <circle cx="28" cy="27" r="4.2" fill="#18181b" />
+          <circle cx="40" cy="27" r="4.2" fill="#18181b" />
+          <circle cx="52" cy="27" r="4.2" fill="#18181b" />
+        </svg>
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- =========================================================================
+       Interactive Contact & Connect Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="contactModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button type="button" class="btn-modal-close" id="modalCloseBtn" aria-label="Fechar modal">&times;</button>
+      <h2 class="modal-title">Vamos Conversar! ✨</h2>
+      <p class="modal-desc">
+        Entre em contato para novos projetos de Design, Games, Web e Desenvolvimento Full Stack.
+      </p>
+
+      <div class="modal-links-grid">
+        <a href="mailto:leticia.carneiro@exemplo.com" class="modal-link-btn" id="emailContactLink">
+          <span>✉️</span> Enviar um E-mail
+        </a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+          <span>💻</span> GitHub
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="modal-link-btn">
+          <span>💼</span> LinkedIn
+        </a>
+        <a href="autora.html" class="modal-link-btn">
+          <span>💖</span> Conhecer Mais Sobre Mim
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,823 @@
+/* ==========================================================================
+   PORTFÓLIO FURTA-COR - LETÍCIA CARNEIRO
+   Design System & Visual Identity
+   ========================================================================== */
+
+:root {
+  /* Core Colors */
+  --color-bg: #ffffff;
+  --color-primary-pink: #f8007b;
+  --color-pink-glow: rgba(248, 0, 123, 0.4);
+  --color-pink-hover: #d90068;
+  --color-dark: #121316;
+  --color-dark-subtle: #2d3139;
+
+  /* Furta-Cor / Iridescent Palette */
+  --fc-cyan: #72f0e0;
+  --fc-mint: #9dfcd2;
+  --fc-yellow: #fff37a;
+  --fc-lime: #cbf96c;
+  --fc-rose: #ffc4e1;
+  --fc-lavender: #d1b8fe;
+  --fc-blue: #93c5fd;
+  --fc-purple: #c084fc;
+  --fc-fuchsia: #f43f5e;
+
+  /* Furta-Cor Gradients */
+  --grad-furta-cor-1: linear-gradient(
+    135deg,
+    #a2f0d4 0%,
+    #8ee8f5 25%,
+    #ffd1ea 50%,
+    #fef289 75%,
+    #c8b5fe 100%
+  );
+
+  --grad-furta-cor-2: linear-gradient(
+    120deg,
+    #c4f7b6 0%,
+    #86efee 28%,
+    #ffcbe4 58%,
+    #fee170 82%,
+    #b2d8ff 100%
+  );
+
+  --grad-badge: linear-gradient(
+    135deg,
+    #bcf4dc 0%,
+    #97ebf7 22%,
+    #fcd5eb 48%,
+    #fff08c 76%,
+    #d1beff 100%
+  );
+
+  --grad-cta: linear-gradient(
+    95deg,
+    #d9f99d 0%,
+    #9bf0e1 32%,
+    #fed7aa 65%,
+    #fbcfe8 85%,
+    #a5f3fc 100%
+  );
+
+  /* Typography */
+  --font-display: 'Unbounded', 'Syne', sans-serif;
+  --font-body: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+
+  /* Shadows & Glassmorphism */
+  --shadow-badge: 0 10px 30px -8px rgba(138, 222, 211, 0.4),
+                  0 4px 12px -2px rgba(248, 0, 123, 0.12);
+  --shadow-cta: 0 12px 28px -6px rgba(155, 240, 225, 0.5),
+                0 6px 16px -2px rgba(248, 0, 123, 0.2);
+  --shadow-floating: 0 16px 36px -10px rgba(0, 0, 0, 0.12),
+                     0 6px 16px -4px rgba(0, 0, 0, 0.08);
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   Reset & Base Styles
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--color-bg);
+  color: var(--color-dark);
+  font-family: var(--font-display);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   Organic Background Blobs (Faithful to Modelo)
+   ========================================================================== */
+.background-blobs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Top-Right Iridescent Organic Blob */
+.bg-blob-tr {
+  position: absolute;
+  top: -12%;
+  right: -8%;
+  width: 52vw;
+  max-width: 750px;
+  height: 65vh;
+  max-height: 800px;
+  background: radial-gradient(
+    ellipse at 60% 40%,
+    #86efac 0%,
+    #67e8f9 30%,
+    #fef08a 60%,
+    #d8b4fe 80%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+  filter: blur(48px);
+  opacity: 0.85;
+  animation: blob-float-tr 18s ease-in-out infinite alternate;
+}
+
+/* Bottom-Left Iridescent Organic Blob */
+.bg-blob-bl {
+  position: absolute;
+  bottom: -15%;
+  left: -10%;
+  width: 48vw;
+  max-width: 700px;
+  height: 60vh;
+  max-height: 750px;
+  background: radial-gradient(
+    ellipse at 40% 60%,
+    #fa0079 0%,
+    #f472b6 35%,
+    #c084fc 65%,
+    #93c5fd 85%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  filter: blur(52px);
+  opacity: 0.88;
+  animation: blob-float-bl 20s ease-in-out infinite alternate;
+}
+
+@keyframes blob-float-tr {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(-30px, 25px) scale(1.06) rotate(6deg);
+  }
+  100% {
+    transform: translate(20px, -15px) scale(0.95) rotate(-4deg);
+  }
+}
+
+@keyframes blob-float-bl {
+  0% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate(25px, -30px) scale(1.08) rotate(-6deg);
+  }
+  100% {
+    transform: translate(-15px, 20px) scale(0.96) rotate(5deg);
+  }
+}
+
+/* ==========================================================================
+   Page Layout
+   ========================================================================== */
+.page-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 2.2rem 2.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   Header / Top Navigation
+   ========================================================================== */
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+/* Left Circle Arrow Button */
+.btn-arrow-corner {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 2px solid #18181b;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.25s ease,
+              border-color 0.25s ease;
+  overflow: hidden;
+}
+
+.btn-arrow-corner::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: var(--grad-furta-cor-1);
+  background-size: 200% 200%;
+  z-index: -1;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.btn-arrow-corner svg {
+  width: 22px;
+  height: 22px;
+  color: #121316;
+  transition: transform 0.25s ease;
+}
+
+.btn-arrow-corner:hover {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 6px 20px var(--color-pink-glow);
+}
+
+.btn-arrow-corner:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* Center Icons Bar */
+.icons-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin: 0 auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icon-item {
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  background: transparent;
+}
+
+.icon-item svg {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.icon-item:hover {
+  transform: translateY(-5px) scale(1.15);
+  filter: drop-shadow(0 6px 14px rgba(248, 0, 123, 0.35));
+}
+
+.icon-item:hover svg {
+  transform: rotate(6deg);
+}
+
+/* Interactive Tooltips */
+.icon-item[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: #18181b;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 9px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 10;
+}
+
+.icon-item:hover[data-tooltip]::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Empty right spacer for balance */
+.header-spacer {
+  width: 48px;
+  height: 48px;
+}
+
+/* ==========================================================================
+   Main Hero Section
+   ========================================================================== */
+.main-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  flex-grow: 1;
+}
+
+/* Letícia Carneiro Name Capsule */
+.name-badge-container {
+  width: 100%;
+  max-width: 490px;
+  margin-bottom: 2.8rem;
+  animation: hero-fade-in 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.name-badge {
+  background: var(--grad-badge);
+  background-size: 200% 200%;
+  border-radius: 36px;
+  padding: 1.35rem 2rem 1.05rem;
+  box-shadow: var(--shadow-badge);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: badge-shimmer 12s ease-in-out infinite alternate;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+}
+
+.name-badge::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0.45) 0%,
+    rgba(255, 255, 255, 0) 45%,
+    rgba(255, 255, 255, 0.25) 70%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  pointer-events: none;
+}
+
+.name-badge:hover {
+  transform: translateY(-3px) scale(1.015);
+  box-shadow: 0 16px 36px -6px rgba(138, 222, 211, 0.5),
+              0 6px 16px -2px rgba(248, 0, 123, 0.2);
+}
+
+@keyframes badge-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.name-title {
+  color: var(--color-primary-pink);
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4.2vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(248, 0, 123, 0.15);
+}
+
+.name-subtitle-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.35rem;
+  padding-right: 0.8rem;
+}
+
+.name-subtitle {
+  color: var(--color-primary-pink);
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+/* ==========================================================================
+   Roles & Skills List
+   ========================================================================== */
+.roles-stack {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 3.4rem;
+  animation: hero-fade-in 0.9s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.role-entry {
+  color: var(--color-primary-pink);
+  font-family: var(--font-display);
+  font-size: clamp(1.28rem, 2.9vw, 1.7rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+              text-shadow 0.25s ease,
+              color 0.25s ease;
+  cursor: default;
+}
+
+.role-entry:hover {
+  transform: scale(1.06);
+  text-shadow: 0 0 16px var(--color-pink-glow);
+  color: #ff1493;
+}
+
+/* ==========================================================================
+   Call to Action (PROJETOS Button)
+   ========================================================================== */
+.cta-wrapper {
+  animation: hero-fade-in 1s 0.28s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.btn-cta-projetos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.85rem 2.8rem 0.85rem 3rem;
+  background: var(--grad-cta);
+  background-size: 200% 200%;
+  border-radius: 9999px;
+  color: var(--color-primary-pink);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: var(--shadow-cta);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease,
+              background-position 0.5s ease;
+  position: relative;
+  overflow: hidden;
+  animation: cta-flow 8s ease infinite alternate;
+}
+
+.btn-cta-projetos::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg);
+  transition: left 0.75s ease;
+}
+
+.btn-cta-projetos:hover::after {
+  left: 140%;
+}
+
+.btn-cta-projetos:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 18px 36px -6px rgba(155, 240, 225, 0.7),
+              0 8px 20px -2px rgba(248, 0, 123, 0.35);
+  color: #ff007f;
+}
+
+.btn-cta-projetos:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.cta-arrow-triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 12px solid var(--color-primary-pink);
+  transition: transform 0.25s ease;
+}
+
+.btn-cta-projetos:hover .cta-arrow-triangle {
+  transform: translateX(4px);
+}
+
+@keyframes cta-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ==========================================================================
+   Footer & Floating Chat Bubble
+   ========================================================================== */
+.footer-bar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 1rem;
+  position: relative;
+}
+
+.chat-bubble-launcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.3s ease;
+  animation: chat-bounce 4s ease-in-out infinite;
+}
+
+.chat-bubble-launcher:hover {
+  transform: scale(1.15) rotate(3deg);
+  filter: drop-shadow(0 8px 18px rgba(248, 0, 123, 0.35));
+}
+
+.chat-bubble-svg {
+  width: 68px;
+  height: 48px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.08));
+}
+
+@keyframes chat-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   Interactive Modals & Popups
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 19, 22, 0.45);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 1.5rem;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 460px;
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 2.2rem;
+  position: relative;
+  box-shadow: var(--shadow-floating);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+}
+
+.modal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: var(--grad-badge);
+}
+
+.modal-overlay.active .modal-card {
+  transform: scale(1) translateY(0);
+}
+
+.btn-modal-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f4f4f5;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+
+.btn-modal-close:hover {
+  background: #f8007b;
+  color: #ffffff;
+  transform: rotate(90deg);
+}
+
+.modal-title {
+  color: var(--color-primary-pink);
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 0.6rem;
+  text-align: center;
+}
+
+.modal-desc {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: #52525b;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.modal-links-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal-link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 16px;
+  background: #fafafa;
+  border: 1px solid #e4e4e7;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #18181b;
+  transition: all 0.2s ease;
+}
+
+.modal-link-btn:hover {
+  background: var(--grad-badge);
+  border-color: transparent;
+  color: var(--color-primary-pink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(248, 0, 123, 0.15);
+}
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes hero-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1.6rem 1.4rem 1.4rem;
+  }
+
+  .icons-bar {
+    gap: 1.1rem;
+  }
+
+  .icon-item {
+    width: 38px;
+    height: 38px;
+  }
+
+  .icon-item svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .name-badge {
+    padding: 1.2rem 1.5rem 0.9rem;
+    border-radius: 28px;
+  }
+
+  .name-badge-container {
+    margin-bottom: 2.2rem;
+  }
+
+  .roles-stack {
+    margin-bottom: 2.8rem;
+    gap: 0.45rem;
+  }
+
+  .btn-cta-projetos {
+    padding: 0.8rem 2.2rem;
+  }
+
+  .bg-blob-tr {
+    width: 75vw;
+    height: 50vh;
+  }
+
+  .bg-blob-bl {
+    width: 75vw;
+    height: 48vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-top {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .btn-arrow-corner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icons-bar {
+    position: static;
+    transform: none;
+    gap: 0.85rem;
+  }
+
+  .header-spacer {
+    display: none;
+  }
+
+  .name-badge {
+    padding: 1rem 1.2rem 0.8rem;
+  }
+
+  .roles-stack {
+    gap: 0.35rem;
+  }
+}
